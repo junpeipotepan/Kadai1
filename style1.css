@@ -1,0 +1,220 @@
+
+/*　①初めに背景画像について指定　*/
+.FirsView{
+  background-image:url(https://camp.potepan.com/wp-content/themes/potepancamp/assets/images/home/first-view/top-hero.jpg);
+  background-size:cover; /*画像をコンテナいっぱいに表示*/
+  background-position:center; /*画像を中央に表示*/
+}
+
+.FirstView_main-image--sp{
+  display: none;
+}
+
+.FirstView_main_image{
+  width:100%;
+}
+/* ヘッダー内部について指定 */
+
+.Header {
+  width:100%;
+  padding_top:20px;
+  padding_bottom:20px;
+}
+
+.HeaderContainer{
+  position:absolute;/*画面の一番上からヘッダーが始まるよう指定。
+  これにより他のボックスも一番上から始まるようになる。背景画像も同様に一番上から始まるため、あえてヘッダーと被せることができる
+  .Header{に適用させていない理由はposition:absolute;に隣接するメイン要素と重なるという特徴があるため。
+  今回だと隣接する要素は.HeaderContainerのため、この部分に指定した。*/
+  display: flex;
+  max-width:100%;
+  margin:0 36px 0 36px;
+  justify-content:space-between;
+}
+
+
+
+.Headertitle{
+  display:block;
+}
+
+/*　③メニュー項目の配置を指定*/
+.menu-group{
+  display: flex;
+  list-style:none;/*　<ul><li>を使うと入る「・」を消すために使用　*/
+  align-items:center;
+  justify-content:space-between;
+  margin-left:10px;
+}
+
+/*　②「無料カウンセリング」のデザインを指定　*/
+.menu-item_button{
+  display:flex;
+  align-items:center;
+  background-color:#F79214;
+  border:none; /*枠線不要*/
+  border-radius:38px; /*ボックスの四隅を丸めるために入力 */
+  color:#fff;
+  cursor:pointer
+  font-weight:700;
+  justify-content:center;
+  text-decoration:none;
+  text-align:center;/*テキストを中央揃えにするために指定（無くても変化なし。何のために入れているか調べる。 */
+  width:auto;
+  font-size:12px;
+  height:40px;
+  padding:0 20px;　/*ボックス内部の余白を指定。上下はなし、左右に20ずつ指定。*/
+}
+
+/*　④無料カウンセリング以外のメニュー項目を調整する場合はここから指定*/
+.menu-item{
+  margin-left: 50px;
+  color:black;
+  text-align: center;
+  justify-content:center;
+  display: flex;
+}
+
+/* span要素がインライン要素のためhtmlで入力した改行を適用させたい場合にはblock要素に変更させる必要がある。　*/
+span{
+  display: block;
+}
+
+.FirstView {
+    background-image: url(https://camp.potepan.com/wp-content/themes/potepancamp/assets/images/home/first-view/top-hero.jpg);
+    background-size: cover; /*背景画像をできるだけ大きく引き延ばす*/
+    background-position: center;/*背景画像を中央寄せで表示*/
+    padding-top: 100px;/*背景画像の上に100px分の余白を作る*/
+    padding-bottom: 28px;/*背景画像の下に28px分の余白を作る*/
+}
+
+.FirstView_container{
+  max-width:1140px;
+  padding-left:50px;
+  padding-right:50px;
+  margin-left:auto;
+  margin-right:auto;
+  position:relative;　/*親要素に指定することで子要素を移動させる際の基準となる。*/
+}
+
+.FirstView_Content{
+  margin-bottom: 70px;
+  width:fit-content;
+}
+
+.FirstViewContent_title{
+  color:#000;
+  font-family: 'Lato', sans-serif;
+  font-size:38px;
+  font-weight:700;
+  line-height:54px;
+  margin-bottom:15px;
+  text-align: center;
+}
+
+.FirstViewContent_images{
+  margin-bottom: 25px;
+}
+
+.FirstViewContent_buttons{
+  display: flex;
+}
+
+.FirstViewContent_buttons a { /*末尾に"a"とつければ一つ目のみ適用可能*/
+    align-items: center; /*コンテナの中で中央に寄せるために入力*/
+    background-color: #F79214;
+    border: none; /*枠線不要*/
+    border-radius: 38px;
+    color: #fff;
+    cursor: pointer; /*マウスカーソルについて指定*/
+    display: flex;　/*ブロック要素→インライン要素*/
+    font-size: 16px;
+    font-weight: 700;
+    height: 64px;
+    justify-content: center;
+    text-decoration: none;
+    text-align: center;
+    width: 250px;
+    height: 64px;
+}
+
+.FirstViewContent_buttons a:last-of-type  {
+  /*兄弟要素の中で一番最後の要素を指定("a"を入れているのため、htmlでaタグを入れているため。もしpタグだったらpに変更すること。*/
+    background-color: #fff;
+    border: 1px solid #E0E0E0;
+    color: #000;
+    width: 176px;
+}
+
+.FirstViewCaption{
+  color:#A2A2A4;
+  font-size:12px;
+}
+
+.About_container{
+  background-color: #F79214;
+  padding:45px 0;
+}
+
+/*何のために入力しているのか要確認*/
+body, div, p, ul, ol, li, dl, dt, dd, table, th, td, img, figure, h1, h2, h3, h4, h5, h6, form, select {
+    margin: 0;
+}
+*, *::before, *::after {
+    word-break: break-all;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+/*何のために入力しているのか要確認*/
+
+.About{
+  max-width: 1140px;
+  padding-left: 50px;
+  padding-right: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.About_title{
+  width: 53%;
+  display: flex;/*ブロック→インライン要素に変更*/
+  flex-direction: column;/*コンテンツの並び順を指定。columnを選ぶことで上から下に向かうようになる。*/
+  align-items: flex-start;
+}
+
+.About_title{
+  color:#fff;
+  text-align:left;
+}
+
+.About_title p{
+　display:inline-block;
+}
+
+.About_button {
+  float:right;
+  margin-top:40px;
+  width:250px;
+  border:none;
+  display:flex;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 700;
+  height: 64px;
+  border-radius: 38px;/*枠を丸めるために必要*/
+  background-color:#fff;
+  color:#F79214;
+  align-items:center;/*ボックス内のテキストを中央に寄せるために下の二つ以外にこれも必要*/
+  justify-content:center;/*ボックス内テキストを上下から中央に寄せる*/
+  text-align: center;/*"justify-content"で中央に寄せたテキストを左右から中央揃えにする。*/
+  float:right;
+}
+
+span{
+  display: block;
+}
