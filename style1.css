@@ -167,6 +167,7 @@ body, div, p, ul, ol, li, dl, dt, dd, table, th, td, img, figure, h1, h2, h3, h4
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
+    max-width: 100%; /*←記述することでスマホでも見切れることなく閲覧可能になる。*/
 }
 /*何のために入力しているのか要確認*/
 
@@ -231,6 +232,18 @@ span{
   height:20px;
   width:auto;
 }
+
+* {
+	float: none;
+	position: static;
+}
+ 
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+
 
 /* 以下の記述はレスポンシブ対応に関すること　*/
 
