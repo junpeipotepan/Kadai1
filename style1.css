@@ -15,27 +15,28 @@
 }
 /* ヘッダー内部について指定 */
 
-.Header {
+.header{
+  display: block;
+}
+
+.Header{
   width:100%;
-  padding_top:20px;
-  padding_bottom:20px;
+  position: absolute;/*画面の一番上からヘッダーが始まるよう指定。
+  これにより他のボックスも一番上から始まるようになる。背景画像も同様に一番上から始まるため、あえてヘッダーと被せることができる*/
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 .HeaderContainer{
-  position:absolute;/*画面の一番上からヘッダーが始まるよう指定。
-  これにより他のボックスも一番上から始まるようになる。背景画像も同様に一番上から始まるため、あえてヘッダーと被せることができる
-  .Header{に適用させていない理由はposition:absolute;に隣接するメイン要素と重なるという特徴があるため。
-  今回だと隣接する要素は.HeaderContainerのため、この部分に指定した。*/
-  display: flex;
-  max-width:100%;
+  display: flex;/*ブロック要素のように動作させることが可能*/
+  justify-content:space-between;/*コンテナ内の要素を均等に配置する。一番初めのアイテムは左端、最後のアイテムは右端に寄せられる。*/
   margin:0 36px 0 36px;
-  justify-content:space-between;
+  max-width: 100%;/*幅の最大値を指定。100％を超えて広がることはない。*/
+  position:relative;/*指定したtop right bottom leftに基づいて配置することが可能。*/
 }
 
-
-
-.Headertitle{
-  display:block;
+.navhumburger{
+  display: none;
 }
 
 /*　③メニュー項目の配置を指定*/
@@ -157,6 +158,7 @@ span{
 }
 
 /*何のために入力しているのか要確認*/
+
 body, div, p, ul, ol, li, dl, dt, dd, table, th, td, img, figure, h1, h2, h3, h4, h5, h6, form, select {
     margin: 0;
 }
@@ -181,9 +183,8 @@ body, div, p, ul, ol, li, dl, dt, dd, table, th, td, img, figure, h1, h2, h3, h4
 }
 
 .About_title{
-  width: 53%;
-  display: flex;/*ブロック→インライン要素に変更*/
-  flex-direction: column;/*コンテンツの並び順を指定。columnを選ぶことで上から下に向かうようになる。*/
+  display: flex;
+  flex-direction: column;*ボックス内の要素を縦に表示する。*/
   align-items: flex-start;
 }
 
@@ -217,4 +218,137 @@ body, div, p, ul, ol, li, dl, dt, dd, table, th, td, img, figure, h1, h2, h3, h4
 
 span{
   display: block;
+}
+
+.sp{
+  display:block;
+  height:16px;
+  width: auto;
+}
+
+.pc{
+  display:block;
+  height:20px;
+  width:auto;
+}
+
+/* 以下の記述はレスポンシブ対応に関すること　*/
+
+
+/* 先にPCサイトでの表記を記述　*/
+/*screen:画面表示にのみに使うという指定
+　and:指定と指定のつなぎ文字
+　max-width:適用する幅を指定
+　画面サイズが769px以上の場合、以下の記述が適用される。*/
+@media screen and (min-width: 769px){
+.sp{
+  display: none;
+}
+}
+
+
+
+/* スマホサイトでの表記を記述　*/
+/*screen:画面表示にのみに使うという指定
+　  and:指定と指定のつなぎ文字
+　  max-width:適用する幅を指定
+　  画面サイズが768px以下の場合、以下の記述が適用される。*/
+@media screen and (max-width: 768px){
+.pc{
+ display: none;
+}
+}
+
+
+/*PCサイト以外での表記を記述*/
+/*screen:画面表示にのみに使うという指定
+　  and:指定と指定のつなぎ文字
+　  max-width:適用する幅を指定
+　  画面サイズが1080px以下の場合、以下の記述が適用される。*/
+/*ハンバーガーメニューの記述 
+　  メニューをクリックする前の三本線のサイズを記述　*/
+@media screen and (max-width: 1080px){
+.navhumburger{
+  cursor: pointer;
+  display: block;
+  position: relative;
+  width: 30px;
+  height: 21px;
+  z-index: 100; /*必ず画面の一番上にくるよう大きな数値を指定*/
+}
+
+/*　１本目の線について記述　*/
+.navhumburger_line:first-child{
+  top:0; /*　0を指定することで一本目の線が他の線と重ならないよう一番上に指定　*/
+}
+
+/*　３本共通する部分について記述　*/
+.navhumburger_line{
+  position: absolute; /*　画面の上に表示されるよう指定（ページレイアウト内に空間を作らず上に詰めるのが特徴*/
+  top:50%;
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: #000;
+  transform: translate(0, -50%);
+  border-radius: 10px;
+  transition: top 0.2s, transform 0.2s, opacity 0.3s;
+}
+
+/*　１本目の線について記述　*/
+.navhumburger_line:last-child{
+  top:100%;/*　0を指定することで一本目の線が他の線と重ならないよう一番上に指定　*/
+}
+
+.menu-group{
+  overflow-y: scroll;
+  position: fixed;
+  top: 60px;
+  left: 100%;
+  width: 100%;
+  display: block;
+  padding-top: 20px;
+  padding-bottom: 75px;
+  transition: transform 0.5s;
+  z-index: 99;
+  background-color: rgba(0, 0, 0, 0.8);
+  -webkit-overflow-scrolling: touch;
+  height: 100%;
+}
+
+.menu-item{
+  margin-right:0;
+}
+
+.menu-item_link{
+  padding:20px 0;
+}
+
+.menu-item_button{
+  font-size: 16px;
+    margin: 0 auto;
+    height: 60px;
+    width: 250px;
+}
+
+.Header {
+    background-color: #fff;
+    position: fixed;
+    z-index: 10;
+}
+}
+@media screen and  (max-width:1024px){
+.About{
+    flex-direction:column;/*スマホのような縦長の画面に対応するために記述。ボックス内の要素を縦に表示する。*/
+}
+
+.About_title{
+    margin-bottom: 0;
+    width: 100%;
+}
+
+.About_button {
+    margin-top: 40px; /*上記の内容との間に余裕を持たせるために入力*/
+    margin-right:35px;/*中央揃えにならないため調整*/
+}
 }

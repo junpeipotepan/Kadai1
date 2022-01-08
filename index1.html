@@ -2,7 +2,14 @@
 <html lang="ja">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <!--【レスポンシブ対応（スマホ対応）する際に必ず必要になるコード】
+    name="viewport"：viewportだよという宣言。
+    width=device-width：コンテンツの幅はデバイスの幅に合わせるよという記述
+    initial-scale=1：画面幅が違う時の倍率設定。この場合は倍率を変えない。-->
+    
     <title>サイト模写</title>
+    <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet"href="style1.css">
   </head>
   
@@ -11,42 +18,50 @@
    
    <!--ヘッダータイトルとメニュー項目を一つのヘッダーコンテナで括る
     　 括らないとヘッダーが一行で収まらないため注意-->
-   <header>
+   <header class="Header">
      <div class="HeaderContainer"> 
-       <a class="Headertitle">
-       <h1><a href="https://camp.potepan.com/wp-content/themes/potepancamp/assets/images/header-logo.png">
-         <img src="https://camp.potepan.com/wp-content/themes/potepancamp/assets/images/header-logo.png"alto="logo">
-       </a></h1>
+       <a class="Headertitle"href="https://camp.potepan.com/">
+       <img class="pc"src="https://camp.potepan.com/wp-content/themes/potepancamp/assets/images/header-logo.png"alt="logo">
+       <img class="sp"src="https://camp.potepan.com/wp-content/themes/potepancamp/assets/images/header-logo-sp.png"alt="logo">
+       </a>
        
+       <!-- スマホ対応時のハンバーガーメニューの作成　-->
+       <!-- ①ハンバーガーメニューの三本線のボタンを作成　-->
        <nav class="nav">
+         <div class="navhumburger jsc-hamburger">
+           <span class="navhumburger_line"></span>
+           <span class="navhumburger_line"></span>
+           <span class="navhumburger_line"></span>
+         </div>
+         
+         <!-- ②ハンバーガーメニューを開いた際のリストを作成 -->
          <ul class="menu-group">
-          
            <li class="menu-item">
-             <a href="https://camp.potepan.com/content">
+             <a class="menu-item_link"href="https://camp.potepan.com/content">
              <span>CONTENT</span>
              <span>学習内容</span>
            </a></li>
            
            <li class="menu-item">
-             <a href="https://camp.potepan.com/interview">
+             <a class="menu-item_link"href="https://camp.potepan.com/interview">
              <span>NTERVIEW</span>
              <span>受講生の声</span>
            </a></li>
            
             <li class="menu-item">
-              <a href="https://camp.potepan.com/faq">
+              <a class="menu-item_link"href="https://camp.potepan.com/faq">
               <span>FAQ</span> 
               <span>よくある質問</span>
               </a></li>
               
             <li class="menu-item">
-              <a href="https://camp.potepan.com/recruit">
+              <a class="menu-item_link"="https://camp.potepan.com/recruit">
               <span>RECRUIT</span> 
               <span>採用企業様へ</span>
               </a></li>
               
             <li class="menu-item">
-              <a href="https://camp.potepan.com/download">
+              <a class="menu-item_link"="https://camp.potepan.com/download">
               <span>DOCUMENT</span> 
               <span>資料請求</span>
               </a></li>
@@ -63,7 +78,7 @@
    
    
         <main>
-            <!-- 背景画像から指定する　-->
+            <!-- 背景画像を指定する　-->
             <section class="FirstView">
                 <img class="FirstView_main-image FirstView_main-image--sp"src="https://camp.potepan.com/wp-content/themes/potepancamp/assets/images/home/first-view/top-hero-sp.jpg"
                 alt="プログラミングスクールでWebエンジニア輩出No.1"><!-- alt以降は画像を表示できないブラウザで閲覧した場合に代わりに表示するテキスト-->
