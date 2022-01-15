@@ -76,6 +76,15 @@
   display: flex;
 }
 
+a{
+  color:#000;
+  text-decoration: none
+}
+
+a:hover{
+  opacity:0.5;
+}
+
 /* span要素がインライン要素のためhtmlで入力した改行を適用させたい場合にはblock要素に変更させる必要がある。　*/
 span{
   display: block;
@@ -198,7 +207,7 @@ body, div, p, ul, ol, li, dl, dt, dd, table, th, td, img, figure, h1, h2, h3, h4
 　display:inline-block;
 }
 
-.About_button {
+.About_button a {
   float:right;
   margin-top:40px;
   width:250px;
@@ -239,9 +248,10 @@ span{
 }
  
 img {
-	max-width: 100%;
-	height: auto;
+	border:0;/*枠線なし*/
+	vertical-align: middle;/*同じボックス内の画像の配置を決定*/
 }
+
 
 
 
