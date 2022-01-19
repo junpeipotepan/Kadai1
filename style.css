@@ -373,5 +373,6 @@ img {
 .About_button {
     margin-top: 40px; /*上記の内容との間に余裕を持たせるために入力*/
     margin-right:35px;/*中央揃えにならないため調整*/
+    
 }
 }
