@@ -103,6 +103,10 @@ span{
  font-size: 10px;
 }
 
+.menu-item :hover{
+  opacity: 0.8;
+}
+
 .nav{
   display: block
 }
@@ -150,6 +154,10 @@ a{
 
 .FirstViewContent_buttons{
   display: flex;
+}
+
+.FirstViewContent_buttons :hover {
+  opacity: 0.8;
 }
 
 .FirstViewContent_buttons a { /*末尾に"a"とつければ一つ目のみ適用可能*/
@@ -244,6 +252,10 @@ body, div, p, ul, ol, li, dl, dt, dd, table, th, td, img, figure, h1, h2, h3, h4
   display:flex;
 }
 
+.About_button :hover{
+  opacity: 0.8;
+}
+
 .About_button a {
   float:right;
   margin-top:40px;
@@ -286,6 +298,10 @@ body, div, p, ul, ol, li, dl, dt, dd, table, th, td, img, figure, h1, h2, h3, h4
   display:block;
   height:20px;
   width:auto;
+}
+
+a.Headertitle :hover{
+  opacity:0.8;
 }
 
 * {
